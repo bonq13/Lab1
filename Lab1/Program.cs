@@ -1,170 +1,67 @@
-﻿namespace Lab1;
+﻿using System;
 
-class Program
+namespace Lab1
 {
-    static void Main(string[] args)
+    class Program
     {
-        //-----zadadnie 1----
-        // FibonacciCalculator calc = new FibonacciCalculator();
-        // calc.Calculate();
-        
-        
-        //-----zadadnie 2----
-        // FibonacciCalculator2 calc2 = new FibonacciCalculator2();
-        // calc2.CalculateFibonacci();
-        
-        
-        //-----zadadnie 3----
-        // NumericalIntegration integrator = new NumericalIntegration();
-        //
-        // double a = 0; 
-        // double b = 2;
-        // int n = 1000; 
-        //
-        // try
-        // {
-        //     double result = integrator.RectangleMethod(a, b, n);
-        //     Console.WriteLine($"Wartość całki funkcji y=1/2*x na przedziale [{a}, {b}] " +
-        //                       $"metodą prostokątów (n={n}): {result:F6}");
-        //     
-        //     
-        //     Console.WriteLine($"Wartość dokładna: 1.0");
-        // }
-        // catch (ArgumentException ex)
-        // {
-        //     Console.WriteLine($"Błąd: {ex.Message}");
-        // }
-        
-        
-        
-        //-----zadadnie 4----
-        // IntegrationAccuracyAnalyzer analyzer = new IntegrationAccuracyAnalyzer();
-        //
-        // double a = 0; 
-        // double b = 2; 
-        // int[] nValues = { 10, 50, 100, 500, 1000, 5000, 10000 }; 
-        //
-        // var results = analyzer.AnalyzeAccuracy(a, b, nValues);
-        //
-        // Console.WriteLine("Analiza dokładności całkowania numerycznego dla y=1/2*x na [0,2]:");
-        // Console.WriteLine("n\t\tWynik całki\t\tBłąd bezwzględny");
-        // Console.WriteLine(new string('-', 50));
-        //
-        // foreach (var result in results)
-        // {
-        //     Console.WriteLine($"{result.n}\t\t{result.result:F8}\t\t{result.error:F8}");
-        // }
-        
-        
-        
-        //-----zadadnie 5----
-        // IntegrationPointAnalyzer analyzer = new IntegrationPointAnalyzer();
-        //
-        // double a = 0; 
-        // double b = 2; 
-        // int[] nValues = { 10, 50, 100, 500, 1000 }; 
-        // RectanglePoint[] points = { RectanglePoint.Left, RectanglePoint.Right, RectanglePoint.Middle };
-        //
-        // var results = analyzer.AnalyzePointAccuracy(a, b, nValues, points);
-        //
-        // Console.WriteLine("Analiza wpływu punktu wyliczania na dokładność całki y=1/2*x na [0,2]:");
-        // Console.WriteLine("n\t\tPunkt\t\tWynik całki\t\tBłąd bezwzględny");
-        // Console.WriteLine(new string('-', 60));
-        //
-        // foreach (var result in results)
-        // {
-        //     Console.WriteLine($"{result.n}\t\t{result.point}\t\t{result.result:F8}\t\t{result.error:F8}");
-        // }
-        
-        
-        
-        //-----zadadnie 6----
-        // IntegrationMethodAnalyzer analyzer = new IntegrationMethodAnalyzer();
-        //
-        // double a = 0; 
-        // double b = 2;
-        // int[] nValues = { 10, 50, 100, 500, 1000 };
-        //
-        // var results = analyzer.AnalyzeMethodAccuracy(a, b, nValues);
-        //
-        // Console.WriteLine("Analiza wpływu metody aproksymacji na dokładność całki y=1/2*x na [0,2]:");
-        // Console.WriteLine("n\t\tMetoda\t\tWynik całki\t\tBłąd bezwzględny");
-        // Console.WriteLine(new string('-', 60));
-        //
-        // foreach (var result in results)
-        // {
-        //     Console.WriteLine($"{result.n}\t\t{result.method}\t\t{result.result:F8}\t\t{result.error:F8}");
-        // }
-        
-        
-        
-        //-----zadadnie 7----
-        // IntegralCalculator calculator = new IntegralCalculator();
-        //
-        // double a = 0;
-        // double b = 2 * Math.PI;
-        // int n = 1000;
-        //
-        // try
-        // {
-        //     double result = calculator.RectangleMethod(a, b, n);
-        //     Console.WriteLine($"Wartość przybliżona całki sin(x) na [{a:F2}, {b:F2}] " +
-        //                       $"metodą prostokątów (n={n}): {result:F6}");
-        //     
-        //     Console.WriteLine($"Wartość dokładna: 0.0");
-        // }
-        // catch (ArgumentException ex)
-        // {
-        //     Console.WriteLine($"Błąd: {ex.Message}");
-        // }
-        
-        
-        
-        //-----zadadnie 8----
-        // QuadraticIntegralSolver calculator = new QuadraticIntegralSolver();
-        //
-        // try
-        // {
-        //    
-        //     Console.Write("Podaj parametr a: ");
-        //     double aCoeff = Convert.ToDouble(Console.ReadLine());
-        //
-        //     Console.Write("Podaj parametr b: ");
-        //     double bCoeff = Convert.ToDouble(Console.ReadLine());
-        //
-        //     Console.Write("Podaj parametr c: ");
-        //     double cCoeff = Convert.ToDouble(Console.ReadLine());
-        //
-        //     Console.Write("Podaj dolną granicę przedziału: ");
-        //     double a = Convert.ToDouble(Console.ReadLine());
-        //
-        //     Console.Write("Podaj górną granicę przedziału: ");
-        //     double b = Convert.ToDouble(Console.ReadLine());
-        //
-        //     Console.Write("Podaj liczbę prostokątów: ");
-        //     int n = Convert.ToInt32(Console.ReadLine());
-        //
-        //     
-        //     double approximateResult = calculator.RectangleMethod(aCoeff, bCoeff, cCoeff, a, b, n);
-        //     double exactResult = calculator.ExactIntegral(aCoeff, bCoeff, cCoeff, a, b);
-        //
-        //     
-        //     Console.WriteLine($"\nFunkcja: y = {aCoeff}x^2 + {bCoeff}x + {cCoeff}");
-        //     Console.WriteLine($"Przybliżona wartość całki na [{a}, {b}] metodą prostokątów (n={n}): {approximateResult:F6}");
-        //     Console.WriteLine($"Dokładna wartość całki: {exactResult:F6}");
-        //     Console.WriteLine($"Błąd bezwzględny: {Math.Abs(approximateResult - exactResult):F6}");
-        // }
-        // catch (FormatException)
-        // {
-        //     Console.WriteLine("Błąd: Wprowadź poprawne wartości liczbowe.");
-        // }
-        // catch (ArgumentException ex)
-        // {
-        //     Console.WriteLine($"Błąd: {ex.Message}");
-        // }
-        // catch (Exception ex)
-        // {
-        //     Console.WriteLine($"Wystąpił błąd: {ex.Message}");
-        // }
+        static void Main(string[] args)
+        {
+            IntegrationRunner runner = new IntegrationRunner();
+
+            while (true)
+            {
+                Console.WriteLine("\n=== Menu ===");
+                Console.WriteLine("1. Zadanie 1 - FibonacciCalculator");
+                Console.WriteLine("2. Zadanie 2 - FibonacciCalculator2");
+                Console.WriteLine("3. Zadanie 3 - NumericalIntegration (y=1/2*x)");
+                Console.WriteLine("4. Zadanie 4 - IntegrationAccuracyAnalyzer");
+                Console.WriteLine("5. Zadanie 5 - IntegrationPointAnalyzer");
+                Console.WriteLine("6. Zadanie 6 - IntegrationMethodAnalyzer");
+                Console.WriteLine("7. Zadanie 7 - IntegralCalculator (sin(x))");
+                Console.WriteLine("8. Zadanie 8 - QuadraticIntegralSolver");
+                Console.WriteLine("0. Wyjście");
+                Console.Write("Wybierz zadanie (0-8): ");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        runner.RunTask1();
+                        break;
+                    case "2":
+                        runner.RunTask2();
+                        break;
+                    case "3":
+                        runner.RunTask3();
+                        break;
+                    case "4":
+                        runner.RunTask4();
+                        break;
+                    case "5":
+                        runner.RunTask5();
+                        break;
+                    case "6":
+                        runner.RunTask6();
+                        break;
+                    case "7":
+                        runner.RunTask7();
+                        break;
+                    case "8":
+                        runner.RunTask8();
+                        break;
+                    case "0":
+                        Console.WriteLine("Zamykanie programu...");
+                        return;
+                    default:
+                        Console.WriteLine("Nieprawidłowy wybór. Wybierz numer od 0 do 8.");
+                        break;
+                }
+
+                Console.WriteLine("\nNaciśnij dowolny klawisz, aby kontynuować...");
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
     }
 }
